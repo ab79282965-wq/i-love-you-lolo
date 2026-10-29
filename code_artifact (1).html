@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى ولاء… حكاية ملكة قلبي</title>
+    <!-- خطوط Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;800&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+    <!-- مكتبة أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- مكتبة Tailwind CSS للتنسيق -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            DEFAULT: '#58111A',
+                            dark: '#38090F',
+                            light: '#801B29',
+                        },
+                        rose: {
+                            soft: '#FFF0F3',
+                            dusty: '#FFCCD5',
+                            accent: '#FF758F',
+                        },
+                        gold: {
+                            light: '#FFE29F',
+                            DEFAULT: '#D4AF37',
+                            dark: '#AA820A'
+                        },
+                        ivory: '#FAF7F2'
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        amiri: ['Amiri', 'serif'],
+                        kufi: ['Reem Kufi', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* التنسيقات الخصوصية والتأثيرات */
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #38090F;
+            color: #FAF7F2;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        .font-serif-ar { font-family: 'Amiri', serif; }
+        .font-title-ar { font-family: 'Reem Kufi', sans-serif; }
+
+        /* خلفية متدرجة مع أنيميشن النجوم */
+        .stars-bg {
+            background: radial-gradient(ellipse at bottom, #58111A 0%, #1A0307 100%);
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2;
+        }
+
+        /* الجسيمات والقلوب العائمة */
+        #particles-canvas {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* تأثيرات الإضاءة والوهج الذهبي */
+        .gold-glow {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .box-gold-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+
+        /* تخصيص شريط التمرير */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #1A0307; }
+        ::-webkit-scrollbar-thumb { background: #801B29; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        /* حركة الوردة المفتوحة */
+        .rose-bloom {
+            transform-origin: center bottom;
+            animation: bloom 4s ease-in-out infinite alternate;
+        }
+        @keyframes bloom {
+            0% { transform: scale(0.95) rotate(-2deg); filter: drop-shadow(0 0 5px rgba(255,117,143,0.5)); }
+            100% { transform: scale(1.05) rotate(2deg); filter: drop-shadow(0 0 20px rgba(255,117,143,0.9)); }
+        }
+
+        /* كروت الأظرف والطي */
+        .envelope-wrapper {
+            perspective: 1000px;
+        }
+        .envelope {
+            transition: transform 0.6s ease-in-out;
+            transform-style: preserve-3d;
+        }
+        .envelope.open {
+            transform: rotateY(180deg);
+        }
+
+        /* تأثير الصناديق الثلاثية الأبعاد */
+        .present-box {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .present-box:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        /* تأثير المرآة */
+        .mirror-frame {
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(212,175,55,0.2) 70%, rgba(88,17,26,0.8) 100%);
+            border: 4px solid #D4AF37;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* زر مميز بالذهبي */
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFE29F 50%, #AA820A 100%);
+            color: #38090F;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* إخفاء التقسيمات افتراضياً */
+        .chapter-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        .chapter-section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* تحسينات لطباعة الكلمات أو التأثير الأدبي */
+        .typewriter-text {
+            border-left: 2px solid #D4AF37;
+            white-space: pre-wrap;
+            animation: blink 0.75s step-end infinite;
+        }
+        @keyframes blink { 50% { border-color: transparent; } }
+
+        /* بطاقة على شكل ورقة قديمة */
+        .parchment {
+            background: #FAF7F2;
+            color: #2D0B0F;
+            background-image: radial-gradient(#E8DFD1 1px, transparent 0);
+            background-size: 16px 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between relative selection:bg-rose-accent selection:text-white">
+
+    <!-- خلفية النجوم والكانفاس -->
+    <div class="stars-bg"></div>
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- شريط التحكم بالموسيقى والتنقل العلوي -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 p-4 bg-burgundy-dark/60 backdrop-blur-md border-b border-gold/20 transition-all duration-300 hidden">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-2">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <span class="text-gold font-title-ar text-xl font-bold">ولاء 🤍</span>
+                <span class="text-xs text-rose-dusty hidden sm:inline-block border-r border-gold/30 pr-3">حكاية ملكة قلبي</span>
+            </div>
+            
+            <!-- مؤشر الفصول والتنقل -->
+            <div class="flex items-center space-x-2 space-x-reverse">
+                <button id="prev-chapter-btn" onclick="prevChapter()" class="text-gold/70 hover:text-gold p-2 rounded-full transition" title="الفصل السابق">
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+                <div class="text-xs font-bold text-rose-dusty bg-burgundy/80 px-3 py-1 rounded-full border border-gold/30">
+                    <span id="current-chapter-num">1</span> / 10
+                </div>
+                <button id="next-chapter-btn" onclick="nextChapter()" class="text-gold/70 hover:text-gold p-2 rounded-full transition" title="الفصل التالي">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+            </div>
+
+            <!-- التحكم بالصوت -->
+            <button id="audio-toggle" onclick="toggleAudio()" class="w-10 h-10 rounded-full bg-burgundy border border-gold/40 flex items-center justify-center text-gold hover:bg-gold hover:text-burgundy-dark transition">
+                <i class="fas fa-music text-sm"></i>
+            </button>
+        </div>
+        <!-- شريط التقدم -->
+        <div class="w-full bg-burgundy-dark/50 h-1 mt-3">
+            <div id="progress-bar" class="bg-gradient-to-r from-gold via-rose-accent to-gold h-1 w-1/10 transition-all duration-500"></div>
+        </div>
+    </header>
+
+    <!-- العناصر الصوتية (موسيقى هادئة دون حقوق) -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-tango-1002.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- شاشة البداية السينمائية (الافتتاحية) -->
+    <section id="splash-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-6 text-center bg-burgundy-dark">
+        <div class="max-w-xl mx-auto space-y-8 relative">
+            <!-- زهرة متفتحة ببريق -->
+            <div class="relative w-32 h-32 mx-auto flex items-center justify-center">
+                <div class="absolute inset-0 rounded-full bg-rose-accent/20 blur-xl animate-pulse"></div>
+                <svg class="w-24 h-24 text-rose-accent rose-bloom" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12,2C12,2 14.5,6.5 14.5,9.5C14.5,10.9 13.9,12.2 13,13C13.9,13.8 14.5,15.1 14.5,16.5C14.5,19.5 12,22 12,22C12,22 9.5,19.5 9.5,16.5C9.5,15.1 10.1,13.8 11,13C10.1,12.2 9.5,10.9 9.5,9.5C9.5,6.5 12,2 12,2M12,4.3C10.8,7.2 11,9.3 11.8,11.2C12.5,10.8 13,10.2 13,9.5C13,8.2 12.4,6.2 12,4.3Z"/>
+                </svg>
+            </div>
+
+            <div class="space-y-4">
+                <p id="splash-text-1" class="text-lg md:text-xl text-rose-dusty font-serif-ar opacity-0 transition-opacity duration-1000">
+                    انتظري قليلًا يا أميرتي…
+                </p>
+                <p id="splash-text-2" class="text-sm md:text-lg text-ivory/90 leading-relaxed opacity-0 transition-opacity duration-1000">
+                    هناك شيء صغير صُنع لأجلكِ، وشيء كبير لا تستطيع الكلمات وصفه.
+                </p>
+                <h1 id="splash-name" class="text-4xl md:text-6xl font-title-ar text-gold gold-glow pt-2 opacity-0 transition-opacity duration-1000">
+                    ولاء 🤍
+                </h1>
+            </div>
+
+            <div id="splash-action" class="opacity-0 transition-opacity duration-1000 pt-6">
+                <button onclick="startJourney()" class="btn-gold px-8 py-4 rounded-full text-lg shadow-lg flex items-center justify-center space-x-3 space-x-reverse mx-auto group">
+                    <span>افتحي عالمكِ يا ملكة قلبي</span>
+                    <i class="fas fa-key text-sm group-hover:rotate-45 transition-transform duration-300"></i>
+                </button>
+                <p class="text-xs text-rose-dusty/60 mt-4">ينصح بتشغيل الصوت لتجربة أكثر سحرًا</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- الحاوية الرئيسية للفصول العشرة -->
+    <main class="flex-grow pt-20 pb-12 px-4 max-w-5xl mx-auto w-full">
+
+        <!-- الفصل 1: باب عالم ولاء -->
+        <section id="chapter-1" class="chapter-section active space-y-8 text-center my-auto py-10">
+            <div class="max-w-3xl mx-auto space-y-6">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-burgundy-light/40 border border-gold/30 text-gold text-xs font-bold tracking-wide">الفصل الأول</span>
+                <h2 class="text-3xl md:text-5xl font-title-ar text-gold gold-glow">إلى ولاء… حكاية ملكة قلبي</h2>
+                <p class="text-base md:text-xl text-rose-dusty font-serif-ar leading-relaxed max-w-2xl mx-auto">
+                    «إلى أميرتي التي تستحق أن تُهدى الكلمات، وأن تُروى لها الحكايات، وأن تُصنع من أجل ابتسامتها مفاجآت صغيرة.»
+                </p>
+                <div class="pt-8">
+                    <div class="p-8 rounded-2xl bg-burgundy/40 border border-gold/20 backdrop-blur-sm space-y-6 shadow-2xl relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-rose-accent/10 rounded-full blur-2xl"></div>
+                        <i class="fas fa-crown text-4xl text-gold animate-bounce"></i>
+                        <h3 class="text-xl font-bold text-ivory">أهلاً بكِ في عالمكِ الخاص</h3>
+                        <p class="text-sm md:text-base text-ivory/80 leading-relaxed font-light">
+                            هذا المكان صُمّم قطرةً بقطرة، وحرفاً بحرف، ليليق بأميرةٍ تضيء دنيتي. يحتوي هذا العالم على عشرة فصول من الرسائل، والألعاب، والشعر، والأسرار والمفاجآت المصممة خصيصاً لإسعاد قلبكِ.
+                        </p>
+                        <button onclick="goToChapter(2)" class="btn-gold px-6 py-3 rounded-xl text-sm font-bold inline-flex items-center space-x-2 space-x-reverse">
+                            <span>ابدئي الرحلة يا أميرتي</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- الفصل 2: الرسالة الرئيسية -->
+        <section id="chapter-2" class="chapter-section space-y-8 my-auto py-6">
+            <div class="text-center space-y-3">
+                <span class="inline-block px-4 py-1 rounded-full bg-burgundy-light/40 border border-gold/30 text-gold text-xs">الفصل الثاني</span>
+                <h2 class="text-2xl md:text-4xl font-title-ar text-gold">رسالة من قلبي إلى أميرتي</h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto parchment p-6 md:p-10 rounded-2xl shadow-2xl relative border-2 border-gold/40">
+                <div class="text-left text-gold-dark/40 mb-4"><i class="fas fa-quote-left text-3xl"></i></div>
+                <div id="main-letter-content" class="text-base md:text-lg text-burgundy-dark leading-relaxed font-serif-ar space-y-4">
+                    <p class="font-bold text-xl text-burgundy border-b border-burgundy/10 pb-2">أميرتي الغالية ولاء،</p>
+                    <p>
+                        من بين كل تفاصيل هذا العالم المزحوم، يظل وجودكِ النور الهادئ الذي ألتجئ إليه، والبهجة التي تمنح الأيام معناها الحقيقي. أن أكتب لكِ يعني أن أحاول صياغة مشاعر أكبر من أن تتسع لها السطور، وتجسيد تقديرٍ أعمق من أن تعبر عنه مجرد ألمح الكلمات.
+                    </p>
+                    <p>
+                        أنتِ لستِ فقط شخصاً مميزاً في حياتي، بل أنتِ المساحة الآمنة التي تجعلني أؤمن بأن في الحياة جمالاً يستحق أن نحتفي به. إن ابتسامتكِ ليست مجرد ملمح جميل، بل هي سببٌ كافٍ ليرتسم الفرح على هذا العالم. أؤمن بصدق أن الحب ليس مجرد عبارات منمقة، بل هو احترامٌ عميق، وصدقٌ لا يتزعزع، ووفاءٌ يزداد قوة مع الأيام.
+                    </p>
+                    <p>
+                        المشاعر الجميلة بيننا لا تحتاج إلى الكمال الظاهري لتكون عظيمة، بل تحتاج إلى الصدق والتفاهم والقدرة على أن نكون أنفسنا دون تصنع. والمستقبل الجميل ليس مجرد صدفة تنتظرنا، بل هو أمنية صادقة نبنيها بالصبر والاحترام والخطوات الواثقة.
+                    </p>
+                    <p class="pt-4 font-bold text-burgundy text-lg">
+                        أحبكِ يا ولاء، يا أميرتي وملكة قلبي. وإن عجزت كلماتي عن وصف مكانتكِ، فلعل أجمل ما أستطيع قوله هو أنني أتمنى لكِ من الفرح ما يجعل قلبكِ مطمئنًا، ومن السعادة ما يفوق كل أمنياتكِ.
+                    </p>
+                </div>
+                <div class="text-right text-gold-dark/40 mt-4"><i class="fas fa-quote-right text-3xl"></i></div>
+            </div>
+
+            <div class="text-center pt-4">
+                <button onclick="goToChapter(3)" class="btn-gold px-8 py-3 rounded-full text-sm font-bold shadow-lg inline-flex items-center space-x-2 space-x-reverse">
+                    <span>هناك المزيد يا أميرتي</span>
+                    <i class="fas fa-chevron-left text-xs"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- الفصل 3: الأسئلة التفاعلية -->
+        <section id="chapter-3" class="chapter-section space-y-6 py-6">
+            <div class="text-center space-y-2">
+                <span class="inline-block px-4 py-1 rounded-full bg-burgundy-light/40 border border-gold/30 text-gold text-xs">الفصل الثالث</span>
+                <h2 class="text-2xl md:text-4xl font-title-ar text-gold">دعينا نلعب قليلًا يا ملكة قلبي</h2>
+                <p class="text-xs md:text-sm text-rose-dusty">أسئلة لطيفة لاستكشاف خاطركِ وإسعادكِ (لا توجد إجابات خاطئة)</p>
+            </div>
+
+            <div id="quiz-container" class="max-w-2xl mx-auto bg-burgundy/60 border border-gold/30 rounded-2xl p-6 md:p-8 backdrop-blur-md shadow-2xl relative min-h-[380px] flex flex-col justify-between">
+                <div>
+                    <!-- شريط رقم السؤال -->
+                    <div class="flex justify-between items-center mb-6 border-b border-gold/20 pb-3">
+                        <span class="text-xs text-gold font-bold" id="quiz-progress-text">السؤال 1 من 16</span>
+                        <button onclick="resetQuiz()" class="text-xs text-rose-dusty/70 hover:text-gold transition">
+                            <i class="fas fa-redo-alt ml-1"></i> إعادة اللعب
+                        </button>
+                    </div>
+
+                    <!-- نص السؤال -->
+                    <h3 id="quiz-question-text" class="text-lg md:text-xl font-bold text-ivory mb-6 leading-relaxed">
+                        جاري تحميل السؤال...
+                    </h3>
+
+                    <!-- خيارات الإجابة -->
+                    <div id="quiz-options" class="grid grid-cols-1 gap-3">
+                        <!-- تُحمل الأزرار عبر JavaScript -->
+                    </div>
+                </div>
+
+                <!-- رد الفعل بعد الإجابة -->
+                <div id="quiz-feedback" class="hidden mt-4 p-4 rounded-xl bg-gold/10 border border-gold/40 text-gold text-sm font-serif-ar animate-fade-in text-center">
+                    <!-- نص الرد -->
+                </div>
+
+                <!-- أزرار التنقل بين الأسئلة -->
+                <div class="flex justify-between items-center mt-6 pt-4 border-t border-gold/20">
+                    <button id="quiz-prev-btn" onclick="prevQuestion()" class="text-xs text-rose-dusty hover:text-gold disabled:opacity-30 disabled:cursor-not-allowed flex items-center space-x-1 space-x-reverse">
+                        <i class="fas fa-arrow-right"></i> <span>السابق</span>
+                    </button>
+                    <button id="quiz-skip-btn" onclick="skipQuestion()" class="text-xs text-gold/80 hover:text-gold">
+                        تخطي السؤال <i class="fas fa-forward mr-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center pt-2">
+                <button onclick="goToChapter(4)" class="text-xs text-rose-dusty hover:text-gold underline">الانتقال إلى الفصل التالي (حديقة الشعر) ←</button>
+            </div>
+        </section>
+
+        <!-- الفصل 4: حديقة الشعر العربي -->
+        <section id="chapter-4" class="chapter-section space-y-8 py-6">
+            <div class="text-center space-y-2">
+                <span class="inline-block px-4 py-1 rounded-full bg-burgundy-light/40 border border-gold/30 text-gold text-xs">الفصل الرابع</span>
+                <h2 class="text-2xl md:text-4xl font-title-ar text-gold">حديقة الشعر… حيث تتفتح الكلمات لأميرتي</h2>
+                <p class="text-xs md:text-sm text-rose-dusty">أبياتٌ أصلية صِيغت بفصاحة لتعبر عن مكانتكِ</p>
+            </div>
+
+            <!-- تبويب القصائد -->
+            <div class="flex justify-center space-x-2 space-x-reverse mb-4">
+                <button onclick="showPoem(1)" id="poem-tab-1" class="px-4 py-2 rounded-xl text-xs font-bold border border-gold/40 bg-gold text-burgundy-dark transition">غزل عفيف</button>
+                <button onclick="showPoem(2)" id="poem-tab-2" class="px-4 py-2 rounded-xl text-xs font-bold border border-gold/20 bg-burgundy/60 text-rose-dusty hover:text-gold transition">الشوق والوفاء</button>
+                <button onclick="showPoem(3)" id="poem-tab-3" class="px-4 py-2 rounded-xl text-xs font-bold border border-gold/20 bg-burgundy/60 text-rose-dusty hover:text-gold transition">الأمل والمستقبل</button>
+            </div>
+
+            <!-- عرض القصيدة -->
+            <div class="max-w-2xl mx-auto parchment p-8 rounded-2xl shadow-2xl relative border-2 border-gold/40 min-h-[350px] flex flex-col justify-between">
+                <div class="flex justify-between items-center border-b border-burgundy/20 pb-3 mb-6">
+                    <h3 id="poem-title" class="text-xl font-bold font-title-ar text-burgundy">عنوان القصيدة</h3>
+                    <button onclick="copyCurrentPoem()" class="text-xs text-burgundy/70 hover:text-burgundy bg-burgundy/5 px-3 py-1 rounded-lg border border-burgundy/20">
+                        <i class="fas fa-copy ml-1"></i> نسخ الأبيات
+                    </button>
+                </div>
+
+                <div id="poem-body" class="text-center font-serif-ar text-lg md:text-xl text-burgundy-dark leading-loose space-y-4 my-auto">
+                    <!-- تظهر الأبيات بالتأثير -->
+                </div>
+
+                <div class="text-center text-xs text-burgundy/50 font-serif-ar border-t border-burgundy/10 pt-4 mt-6">
+                    كتبت خصيصاً لأميرتي ولاء 🤍
+                </div>
+            </div>
+
+            <div class="text-center pt-4">
+                <button onclick="goToChapter(5)" class="btn-gold px-8 py-3 rounded-full text-sm font-bold shadow-lg">
+                    <span>افتحي أظرف الأسرار</span>
+                    <i class="fas fa-envelope mr-2"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- الفصل 5: الأظرف السرية -->
+        <section id="chapter-5" class="chapter-section space-y-8 py-6">
+            <div class="text-center space-y-2">
+                <span class="inline-block px-4 py-1 rounded-full bg-burgundy-light/40 border border-gold/30 text-gold text-xs">الفصل الخامس</span>
+                <h2 class="text-2xl md:text-4xl font-title-ar text-gold">أظرف الأسرار</h2>
+                <p class="text-xs md:text-sm text-rose-dusty">اضغطي على أي ظرف لفتحه وقراءة ما بداخل قلبه</p>
+            </div>
+
+            <!-- شبكة الأظرف الستة -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <!-- الظرف 1 -->
+                <div onclick="openEnvelope(1)" class="envelope-wrapper cursor-pointer group">
+                    <div class="bg-burgundy/80 border border-rose-accent/30 rounded-2xl p-6 text-center shadow-lg group-hover:border-rose-accent transition duration-300 transform group-hover:-translate-y-2">
+                        <div class="w-16 h-16 mx-auto bg-rose-accent/10 rounded-full flex items-center justify-center text-rose-accent text-2xl mb-4">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h4 class="font-bold text-ivory text-sm mb-2">افتحيني عندما تحتاجين إلى الابتسام</h4>
+                        <span class="text-xs text-gold">اضغطي للفتح ✨</span>
+                    </div>
+                </div>
+
+                <!-- الظرف 2 -->
+                <div onclick="openEnvelope(2)" class="envelope-wrapper cursor-pointer group">
+                    <div class="bg-burgundy/80 border border-rose-accent/30 rounded-2xl p-6 text-center shadow-lg group-hover:border-rose-accent transition duration-300 transform group-hover:-translate-y-2">
+                        <div class="w-16 h-16 mx-auto bg-rose-accent/10 rounded-full flex items-center justify-center text-rose-accent text-2xl mb-4">
+                            <i class="fas fa-cloud-rain"></i>
+                        </div>
+                        <h4 class="font-bold text-ivory text-sm mb-2">افتحيني عندما يكون يومكِ صعبًا</h4>
+                        <span class="text-xs text-gold">اضغطي للفتح ✨</span>
+                    </div>
+                </div>
+
+                <!-- الظرف 3 -->
+                <div onclick="openEnvelope(3)" class="envelope-wrapper cursor-pointer group">
+                    <div class="bg-burgundy/80 border border-rose-accent/30 rounded-2xl p-6 text-center shadow-lg group-hover:border-rose-accent transition duration-300 transform group-hover:-translate-y-2">
+                        <div class="w-16 h-16 mx-auto bg-rose-accent/10 rounded-full flex items-center justify-center text-rose-accent text-2xl mb-4">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="font-bold text-ivory text-sm mb-2">افتحيني عندما تشتاقين إلى الكلمات الجميله</h4>
+                        <span class="text-xs text-gold">اضغطي للفتح ✨</span>
+                    </div>
+                </div>
+
+                <!-- الظرف 4 -->
+                <div onclick="openEnvelope(4)" class="envelope-wrapper cursor-pointer group">
+                    <div class="bg-burgundy/80 border border-rose-accent/30 rounded-2xl p-6 text-center shadow-lg group-hover:border-rose-accent transition duration-300 transform group-hover:-translate-y-2">
+                        <div class="w-16 h-16 mx-auto bg-rose-accent/10 rounded-full flex items-center justify-center text-rose-accent text-2xl mb-4">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="font-bold text-ivory text-sm mb-2">افتحيني عندما تنسين كم أنتِ مميزة</h4>
+                        <span class="text-xs text-gold">اضغطي للفتح ✨</span>
+                    </div>
+                </div>
+
+                <!-- الظرف 5 -->
+                <div onclick="openEnvelope(5)" class="envelope-wrapper cursor-pointer group">
+                    <div class="bg-burgundy/80 border border-rose-accent/30 rounded-2xl p-6 text-center shadow-lg group-hover:border-rose-accent transition duration-300 transform group-hover:-translate-y-2">
+                        <div class="w-16 h-16 mx-auto bg-rose-accent/10 rounded-full flex items-center justify-center text-rose-accent text-2xl mb-4">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h4 class="font-bold text-ivory text-sm mb-2">افتحيني عندما تريدين قراءة أمنية من قلبي</h4>
+                        <span class="text-xs text-gold">اضغطي للفتح ✨</span>
+                    </div>
+                </div>
+
+                <!-- الظرف 6 (الذهبي) -->
+                <div onclick="openEnvelope(6)" class="envelope-wrapper cursor-pointer group sm:col-span-2 lg:col-span-1">
+                    <div class="bg-gradient-to-br from-gold/30 via-burgundy to-burgundy border-2 border-gold rounded-2xl p-6 text-center shadow-2xl box-gold-glow group-hover:scale-105 transition duration-300">
+                        <div class="w-16 h-16 mx-auto bg-gold/20 rounded-full flex items-center justify-center text-gold text-2xl mb-4">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h4 class="font-bold text-gold text-sm mb-2">سرّ صغير لم أضعه في أي ظرف آخر</h4>
+                        <span class="text-xs text-gold-light font-bold">الظرف الذهبي الاستثنائي 👑</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- النافذة المنبثقة لقراءة الظرف -->
+            <div id="envelope-modal" class="fixed inset-0 z-50 bg-burgundy-dark/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+                <div class="max-w-lg w-full bg-burgundy border-2 border-gold rounded-2xl p-6 md:p-8 relative shadow-2xl space-y-6">
+                    <button onclick="closeEnvelopeModal()" class="absolute top-4 left-4 text-gold hover:text-white text-xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="text-center space-y-3">
+                        <div id="modal-icon" class="text-4xl text-gold"></div>
+                        <h3 id="modal-title" class="text-xl font-bold font-title-ar text-gold">عنوان الرسالة</h3>
+                    </div>
+                    <p id="modal-content" class="text-base text-ivory/90 leading-relaxed font-serif-ar text-center px-2">
+                        محتوى الرسالة...
+                    </p>
+                    <div class="text-center pt-4">
+                        <button onclick="closeEnvelopeModal()" class="btn-gold px-6 py-2 rounded-xl text-xs">إغلاق الرسالة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pt-4">
+                <button onclick="goToChapter(6)" class="btn-gold px-8 py-3 rounded-full text-sm font-bold shadow-lg">
+                    <span>الانتقال إلى صناديق الهدايا</span>
+                    <i class="fas fa-gift mr-2"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- الفصل 6: صناديق الهدايا الثلاثة -->
+        <section id="chapter-6" class="chapter-section space-y-8 py-6">
+            <div class="text-center space-y-2">
+                <span class="inline-block px-4 py-1 rounded-full bg-burgundy-light/40 border border-gold/30 text-gold text-xs">الفصل السادس</span>
+                <h2 class="text-2xl md:text-4xl font-title-ar text-gold">اختاري هديتكِ يا أميرتي</h2>
+                <p class="text-xs md:text-sm text-rose-dusty">ثلاثة صناديق تحمل مفاجآت خاصة مصممة لأجلكِ</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto pt-6">
+                <!-- الصندوق 1 -->
+                <div onclick="openGiftBox(1)" class="present-box cursor-pointer bg-burgundy/80 border border-gold/40 rounded-2xl p-8 text-center box-gold-glow relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gold/5 group-hover:bg-gold/10 transition"></div>
+                    <div class="text-5xl text-gold mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-ivory mb-2">هدية الكلمات</h3>
+                    <p class="text-xs text-rose-dusty">همسة خاصة من القلب</p>
+                </div>
+
+                <!-- الصندوق 2 -->
+                <div onclick="openGiftBox(2)" class="present-box cursor-pointer bg-burgundy/80 border border-gold/40 rounded-2xl p-8 text-center box-gold-glow relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gold/5 group-hover:bg-gold/10 transition"></div>
+                    <div class="text-5xl text-gold mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-ivory mb-2">هدية الشعر</h3>
+                    <p class="text-xs text-rose-dusty">أبياتٌ أعدت خصيصاً</p>
+                </div>
+
+                <!-- الصندوق 3 -->
+                <div onclick="openGiftBox(3)" class="present-box cursor-pointer bg-burgundy/80 border border-gold/40 rounded-2xl p-8 text-center box-gold-glow relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gold/5 group-hover:bg-gold/10 transition"></div>
+                    <div class="text-5xl text-gold mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-star text-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-ivory mb-2">هدية الأمنيات</h3>
+                    <p class="text-xs text-rose-dusty">دعوات حارة للمستقبل</p>
+                </div>
+            </div>
+
+            <!-- عرض مفاجأة الصندوق -->
+            <div id="gift-modal" class="fixed inset-0 z-50 bg-burgundy-dark/95 backdrop-blur-md hidden flex items-center justify-center p-4">
+                <div class="max-w-md w-full parchment border-2 border-gold rounded-2xl p-8 text-center space-y-6 relative shadow-2xl">
+                    <button onclick="closeGiftModal()" class="absolute top-4 left-4 text-burgundy text-xl hover:scale-110">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div id="gift-modal-icon" class="text-5xl text-gold-dark"></div>
+                    <h3 id="gift-modal-title" class="text-2xl font-bold font-title-ar text-burgundy">اسم الهدية</h3>
+                    <div id="gift-modal-text" class="text-base text-burgundy-dark font-serif-ar leading-relaxed">
+                        نص الهدية...
+                    </div>
+                    <button onclick="closeGiftModal()" class="btn-gold px-6 py-2 rounded-xl text-xs font-bold">شكراً لهذه المفاجأة 🤍</button>
+                </div>
+            </div>
+
+            <div class="text-center pt-6">
+                <button onclick="goToChapter(7)" class="btn-gold px-8 py-3 rounded-full text-sm font-bold shadow-lg">
+                    <span>استكشفي 100 سبب للمحبة</span>
+                    <i class="fas fa-heart mr-2"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- الفصل 7: 100 سبب للمحبة -->
+        <section id="chapter-7" class="chapter-section space-y-6 py-6">
+            <div class="text-center space-y-2">
+                <span class="inline-block px-4 py-1 rounded-full bg-burgundy-light/40 border border-gold/30 text-gold text-xs">الفصل السابع</span>
+                <h2 class="text-2xl md:text-4xl font-title-ar text-gold">100 سبب يجعل أميرتي مميزة</h2>
+                <p class="text-xs md:text-sm text-rose-dusty">مئة تفصيلة حقيقية تمنحكِ مكانتكِ الخاصة في القلب</p>
+            </div>
+
+            <!-- شبكة الأسباب الـ 10 لكل صفحة -->
+            <div class="max-w-4xl mx-auto bg-burgundy/40 border border-gold/20 rounded-2xl p-6 backdrop-blur-md shadow-2xl space-y-6">
+                <div id="reasons-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- تُحمل البطاقات الـ 10 عبر JavaScript -->
+                </div>
+
+                <!-- التحكم بصفحات الأسباب -->
+                <div class="flex justify-between items-center border-t border-gold/20 pt-4">
+                    <button id="reasons-prev-btn" onclick="prevReasonsPage()" class="btn-gold px-4 py-2 rounded-xl text-xs font-bold disabled:opacity-30">
+                        <i class="fas fa-arrow-right ml-1"></i> الصفحة السابقة
+                    </button>
+                    <span id="reasons-page-indicator" class="text-xs text-rose-dusty font-bold">الصفحة 1 من 10</span>
+                    <button id="reasons-next-btn" onclick="nextReasonsPage()" class="btn-gold px-4 py-2 rounded-xl text-xs font-bold disabled:opacity-30">
+                        الصفحة التالية <i class="fas fa-arrow-left mr-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- أسباب قابلة للتعديل الشراكي -->
+            <div class="max-w-4xl mx-auto bg-burgundy/60 border border-rose-accent/30 rounded-2xl p-6 space-y-4">
+                <h3 class="text-base font-bold text-gold text-center"><i class="fas fa-pen-nib ml-2"></i>سبب خاص أكتبه لكِ بنفسي:</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    <input type="text" value="لأن صوتكِ يدخل الطمأنينة إلى أعماق قلبي بلمح البصر." class="bg-burgundy-dark/80 border border-gold/30 rounded-xl p-3 text-ivory focus:border-gold outline-none">
+                    <input type="text" value="لأن تفهمكِ ولطفكِ يمنحاني أملًا دائماً بالغد." class="bg-burgundy-dark/80 border border-gold/30 rounded-xl p-3 text-ivory focus:border-gold outline-none">
+                </div>
+            </div>
+
+            <div class="text-center pt-2">
+                <button onclick="goToChapter(8)" class="btn-gold px-8 py-3 rounded-full text-sm font-bold shadow-lg">
+                    <span>انتقلي إلى مرآة الكلمات</span>
+                    <i class="fas fa-magic mr-2"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- الفصل 8: مرآة الكلمات الجميلة -->
+        <section id="chapter-8" class="chapter-section space-y-8 py-6">
+            <div class="text-center space-y-2">
+                <span class="inline-block px-4 py-1 rounded-full bg-burgundy-light/40 border border-gold/30 text-gold text-xs">الفصل الثامن</span>
+                <h2 class="text-2xl md:text-4xl font-title-ar text-gold">أشياء جميلة أريدكِ أن تتذكريها</h2>
+                <p class="text-xs md:text-sm text-rose-dusty">انظري في مرآة الحقيقة واكتشفي كلمة تليق بروحكِ</p>
+            </div>
+
+            <div class="max-w-md mx-auto">
+                <div onclick="generateMirrorPhrase()" class="mirror-frame w-64 h-64 md:w-80 md:h-80 rounded-full mx-auto flex items-center justify-center p-8 text-center cursor-pointer transform hover:scale-105 transition duration-500 relative group">
+                    <div class="absolute inset-0 rounded-full bg-gold/10 group-hover:bg-gold/20 transition"></div>
+                    <p id="mirror-text" class="text-base md:text-lg font-serif-ar text-ivory font-bold leading-relaxed z-10">
+                        اضغطي على المرآة لتكتشفي عبارة إيجابية أعدت لأجلكِ ✨
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center space-y-4">
+                <button onclick="generateMirrorPhrase()" class="btn-gold px-6 py-3 rounded-xl text-xs font-bold inline-flex items-center space-x-2 space-x-reverse">
+                    <i class="fas fa-sparkles"></i>
+                    <span>أخبريني بشيء جميل آخر</span>
+                </button>
+            </div>
+
+            <div class="text-center pt-4">
+                <button onclick="goToChapter(9)" class="btn-gold px-8 py-3 rounded-full text-sm font-bold shadow-lg">
+                    <span>الانتقال إلى قسم أمنيات المستقبل</span>
+                    <i class="fas fa-star mr-2"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- الفصل 9: أمنيات المستقبل -->
+        <section id="chapter-9" class="chapter-section space-y-8 py-6">
+            <div class="text-center space-y-2">
+                <span class="inline-block px-4 py-1 rounded-full bg-burgundy-light/40 border border-gold/30 text-gold text-xs">الفصل التاسع</span>
+                <h2 class="text-2xl md:text-4xl font-title-ar text-gold">أمنيات أتمناها لأميرتي</h2>
+                <p class="text-xs md:text-sm text-rose-dusty">دعوات من القلب لتسير في درب أيامكِ المقبلة</p>
+            </div>
+
+            <!-- بطاقات الأمنيات الجاهزة -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-burgundy/60 border border-gold/30 rounded-2xl p-6 text-center space-y-3 backdrop-blur-sm">
+                    <i class="fas fa-graduation-cap text-3xl text-gold"></i>
+                    <h3 class="font-bold text-ivory text-sm">التوفيق والنجاح</h3>
+                    <p class="text-xs text-rose-dusty leading-relaxed">أن تنجحي في دراستكِ وحياتكِ وتفخري بكل إنجاز تصنعينه بيدكِ.</p>
+                </div>
+                <div class="bg-burgundy/60 border border-gold/30 rounded-2xl p-6 text-center space-y-3 backdrop-blur-sm">
+                    <i class="fas fa-heart-pulse text-3xl text-rose-accent"></i>
+                    <h3 class="font-bold text-ivory text-sm">راحة البال</h3>
+                    <p class="text-xs text-rose-dusty leading-relaxed">أن تجدي الطمأنينة والسلام في كل خطواتكِ وأن يحفظ الله قلبكِ الصافي.</p>
+                </div>
+                <div class="bg-burgundy/60 border border-gold/30 rounded-2xl p-6 text-center space-y-3 backdrop-blur-sm">
+                    <i class="fas fa-sun text-3xl text-gold"></i>
+                    <h3 class="font-bold text-ivory text-sm">أيام مليئة بالفرح</h3>
+                    <p class="text-xs text-rose-dusty leading-relaxed">أن تحيط بكِ الصحبة الطيبة، وأن تحققي أهدافكِ القريبة والبعيدة بالحلال والخير.</p>
+                </div>
+            </div>
+
+            <!-- حقل كتابة أمنية خاصة للتحويل إلى نجمة -->
+            <div class="max-w-xl mx-auto bg-burgundy/80 border border-gold/40 rounded-2xl p-6 text-center space-y-4">
+                <h3 class="font-bold text-gold text-sm">اكتبي أمنيتكِ الخاصة لنفسكِ واطلقيها في سماء الموقع:</h3>
+                <div class="flex space-x-2 space-x-reverse">
+                    <input id="user-wish-input" type="text" placeholder="اكتبي أمنيتكِ هنا يا ولاء..." class="flex-grow bg-burgundy-dark/90 border border-gold/30 rounded-xl px-4 py-2 text-xs text-ivory outline-none focus:border-gold">
+                    <button onclick="launchWishStar()" class="btn-gold px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap">
+                        أطلقي النجمة ✨
+                    </button>
+                </div>
+                <div id="wish-star-display" class="hidden text-xs text-gold font-serif-ar p-3 bg-gold/10 rounded-xl border border-gold/30">
+                    <!-- تظهر الأمنية هنا -->
+                </div>
+            </div>
+
+            <div class="text-center pt-4">
+                <button onclick="goToChapter(10)" class="btn-gold px-8 py-3 rounded-full text-sm font-bold shadow-lg">
+                    <span>إلى المفاجأة والنهاية السينمائية</span>
+                    <i class="fas fa-crown mr-2"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- الفصل 10: النهاية السينمائية -->
+        <section id="chapter-10" class="chapter-section space-y-8 text-center py-6">
+            <div class="max-w-3xl mx-auto space-y-6">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-burgundy-light/40 border border-gold/30 text-gold text-xs font-bold">الفصل العاشر والمهرجان الأخير</span>
+                
+                <div class="space-y-4">
+                    <p class="text-base md:text-xl text-rose-dusty font-serif-ar">وصلتِ إلى نهاية هذه الرحلة يا أميرتي…</p>
+                    <p class="text-sm md:text-base text-ivory/80 leading-relaxed font-serif-ar">
+                        «لكن الأشياء الجميلة لا تُقاس بطولها، بل بالمشاعر الصادقة التي تتركها في القلب.»
+                    </p>
+                </div>
+
+                <div class="parchment p-8 md:p-10 rounded-2xl shadow-2xl text-right font-serif-ar text-burgundy-dark space-y-4 leading-relaxed border-2 border-gold/40">
+                    <p class="font-bold text-lg text-burgundy">يا ولاء، يا أميرتي وملكة قلبي،</p>
+                    <p>
+                        أردتُ أن أصنع لكِ مكانًا صغيرًا، تهربين إليه من ازدحام الأيام، وتجدين فيه كلمات جميلة تذكّركِ بأنكِ تستحقين الفرح واللطف والاحترام.
+                    </p>
+                    <p>
+                        لم أصنع هذا العالم لأن الكلمات تكفي للتعبير عن كل شيء، بل لأن بعض المشاعر تستحق أن نحاول التعبير عنها، حتى لو بقي منها ما تعجز الحروف عن قوله.
+                    </p>
+                    <p>
+                        أتمنى أن تبتسمي وأنتِ تتنقلين بين صفحاته، وأن تجدي في كل رسالة شيئًا يبهج قلبكِ، وأن تحمل لكِ الحياة أيامًا أجمل مما تتمنين.
+                    </p>
+                    <p>
+                        كوني دائمًا فخورة بنفسكِ، رحيمة بقلبكِ، ومتمسكة بأحلامكِ الجميلة. وإن كانت هذه هديتي لكِ اليوم، فأمنيتي أن تكون الأيام القادمة مليئة بهدايا الحياة الجميلة لكِ.
+                    </p>
+                    <p class="font-bold text-burgundy pt-2">
+                        إلى ولاء… التي اخترتُ أن أهديها هذه الكلمات، لأنها تستحق أن يصلها من الجمال ما استطاعت الكلمات أن تحمله.
+                    </p>
+                </div>
+
+                <div class="pt-6 space-y-6">
+                    <h2 class="text-3xl md:text-5xl font-title-ar text-gold gold-glow">أحبكِ يا أميرتي، يا ملكة قلبي. 🤍</h2>
+                    
+                    <button id="final-surprise-btn" onclick="triggerFinalSurprise()" class="btn-gold px-10 py-4 rounded-full text-lg shadow-2xl font-bold">
+                        افتحي آخر مفاجأة ✨
+                    </button>
+                </div>
+
+                <!-- شاشة المفاجأة النهائية البصرية -->
+                <div id="final-modal" class="fixed inset-0 z-50 bg-burgundy-dark/95 hidden flex flex-col items-center justify-center p-6 text-center space-y-6">
+                    <div class="w-24 h-24 text-gold animate-bounce">
+                        <i class="fas fa-star text-6xl gold-glow"></i>
+                    </div>
+                    <p class="text-lg md:text-2xl text-ivory font-serif-ar max-w-xl leading-relaxed">
+                        «إن انتهت الصفحات، فلا تنتهِ أمنياتي لكِ بالسعادة. وإن سكتت الكلمات، فليتحدث عنكِ كل خير تتمنينه لنفسكِ.»
+                    </p>
+                    <button onclick="restartJourney()" class="btn-gold px-8 py-3 rounded-full text-sm font-bold">
+                        أعيدي رحلتكِ من البداية 🔄
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="py-4 text-center text-xs text-rose-dusty/50 border-t border-gold/10">
+        صُنع بحب وشغف لأجل أميرتي ولاء 🤍
+    </footer>
+
+    <!-- البرمجة الكلية والتفاعلات JavaScript -->
+    <script>
+        /* ==========================================================================
+           1. إدارة الحالة العامة والتنقل بين الفصول الـ 10
+           ========================================================================== */
+        let currentChapter = 1;
+        const totalChapters = 10;
+
+        function startJourney() {
+            document.getElementById('splash-screen').classList.add('hidden');
+            document.getElementById('main-header').classList.remove('hidden');
+            goToChapter(1);
+            playAudio();
+        }
+
+        function goToChapter(chapterNum) {
+            if(chapterNum < 1 || chapterNum > totalChapters) return;
+
+            // إخفاء كافة الفصول
+            document.querySelectorAll('.chapter-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+
+            // إظهار الفصل المطلوب
+            const targetSection = document.getElementById(`chapter-${chapterNum}`);
+            if(targetSection) {
+                targetSection.classList.add('active');
+                currentChapter = chapterNum;
+                updateHeaderUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function nextChapter() {
+            if(currentChapter < totalChapters) {
+                goToChapter(currentChapter + 1);
+            }
+        }
+
+        function prevChapter() {
+            if(currentChapter > 1) {
+                goToChapter(currentChapter - 1);
+            }
+        }
+
+        function updateHeaderUI() {
+            document.getElementById('current-chapter-num').innerText = currentChapter;
+            const progressPercent = (currentChapter / totalChapters) * 100;
+            document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+        }
+
+        function restartJourney() {
+            document.getElementById('final-modal').classList.add('hidden');
+            goToChapter(1);
+        }
+
+        /* ==========================================================================
+           2. التشغيل الصوتي والمؤثرات
+           ========================================================================== */
+        const bgMusic = document.getElementById('bg-music');
+        let isAudioPlaying = false;
+
+        function toggleAudio() {
+            if(isAudioPlaying) {
+                bgMusic.pause();
+                isAudioPlaying = false;
+                document.getElementById('audio-toggle').classList.remove('bg-gold', 'text-burgundy-dark');
+            } else {
+                playAudio();
+            }
+        }
+
+        function playAudio() {
+            bgMusic.play().then(() => {
+                isAudioPlaying = true;
+                document.getElementById('audio-toggle').classList.add('bg-gold', 'text-burgundy-dark');
+            }).catch(() => {
+                // منع التشفير التلقائي للصدى في بعض المتصفحات
+                isAudioPlaying = false;
+            });
+        }
+
+        /* ==========================================================================
+           3. شاشة البداية والظهور التدريجي للنصوص
+           ========================================================================== */
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => { document.getElementById('splash-text-1').style.opacity = '1'; }, 500);
+            setTimeout(() => { document.getElementById('splash-text-2').style.opacity = '1'; }, 1800);
+            setTimeout(() => { document.getElementById('splash-name').style.opacity = '1'; }, 3000);
+            setTimeout(() => { document.getElementById('splash-action').style.opacity = '1'; }, 4200);
+
+            initParticles();
+            initQuiz();
+            showPoem(1);
+            renderReasonsPage(1);
+        });
+
+        /* ==========================================================================
+           4. قسم الأسئلة التفاعلية (16 سؤالاً)
+           ========================================================================== */
+        const quizQuestions = [
+            {
+                q: "أي لقب من هذه الألقاب تحبين أن يظهر لكِ أكثر؟",
+                options: ["أميرتي", "ملكة قلبي", "قمري", "جميعها، فالدلال يليق بي"],
+                responses: [
+                    "يليق بكِ لقب أميرتي دائماً وأبداً! 👑",
+                    "أنتِ بالفعل ملكة متوجة على عرش قلبي 💖",
+                    "تضيئين عتمة الأيام كالقمر الساطع 🌙",
+                    "بالتأكيد! الدلال والدلع صُنعا خصيصاً لأجلكِ ✨"
+                ]
+            },
+            {
+                q: "لو استطعتِ اختيار هدية معنوية الآن، فماذا تختارين؟",
+                options: ["رسالة مكتوبة من القلب", "قصيدة عربية جميلة", "يوم مليء بالضحك واللحظات الجميلة", "أمنية صادقة تتحقق يومًا ما"],
+                responses: [
+                    "الرسائل الصادقة هي الخالدة في ذاكرة القلوب 💌",
+                    "الشعر يتشرف بأن يُقال في وصف حسنكِ 📜",
+                    "ضحكتكِ هي أجمل موسيقى في هذا الكون 😊",
+                    "أتمنى من الله أن يحقق لكِ كل ما تتمنينه وأكثر 🤲"
+                ]
+            },
+            {
+                q: "ما الشيء الذي قد يجعل يومكِ أفضل؟",
+                options: ["كلمة لطيفة", "اهتمام صادق", "مفاجأة صغيرة", "وقت هادئ أرتاح فيه"],
+                responses: [
+                    "الكلمة اللطيفة أثرها يدوم كالعطر 🌸",
+                    "تستحقين كل اهتمام وتقدير في هذا العالم 🤍",
+                    "ابتسامتكِ عند المفاجآت هي أجمل مكافأة ✨",
+                    "الراحة والسكينة لروحكِ الجميلة دائماً 🌿"
+                ]
+            },
+            {
+                q: "أي مكان خيالي تختارين لقضاء لحظة هادئة؟",
+                options: ["حديقة ورود تحت ضوء القمر", "شاطئ هادئ وقت الغروب", "مكتبة دافئة مليئة بالكتب", "حديقة مضيئة بالنجوم"],
+                responses: [
+                    "الورود والقمر يستمدان حسنهما من وجودكِ 🌹",
+                    "الغروب والهواء العليل يليقان بروقانكِ 🌊",
+                    "دفء الكتب والمعرفة يشبه دفء روحكِ العميقة 📖",
+                    "النجوم تتلألأ فرحاً بوجود أميرتها ⭐️"
+                ]
+            },
+            {
+                q: "ما الرسالة التي تحبين سماعها في يوم صعب؟",
+                options: ["«أنا هنا لأستمع إليكِ»", "«لا بأس بأن تتعبي، خذي وقتكِ»", "«أنتِ تستحقين الراحة والطمأنينة»", "«أتمنى أن يأتيكِ الفرح من حيث لا تحتسبين»"],
+                responses: [
+                    "أذني وقلبي دائماً مصغيان لكل ما يجيش بخاطركِ 🎧",
+                    "رفقاً بنفسكِ، فأنتِ أغلى ما في الوجود 🤍",
+                    "الراحة والطمأنينة حقٌ أصيل لقلبكِ الرقيق 🕊️",
+                    "جعل الله كل أيامكِ القادمة فرحاً وسروراً 🌈"
+                ]
+            },
+            {
+                q: "ما الأسلوب الأقرب إلى قلبكِ عند بداية يوم جديد؟",
+                options: ["قهوة دافئة مع رسالة صبحتكِ بالخير", "دعاء هادئ بالبركة والتوفيق", "ابتسامة وكلمات مشجعة", "هدوء وتأمل لطيف"],
+                responses: [
+                    "صباحكِ أجمل من كل أنوار الدنيا يا أميرتي ☕",
+                    "استجاب الله كل دعواتكِ وحفظكِ بعينه التي لا تنام 🤲",
+                    "طاقتكِ الإيجابية تضيء كل المكان حولكِ ☀️",
+                    "الهدوء والسلام لروحكِ النقية في كل صباح 🌿"
+                ]
+            },
+            {
+                q: "إذا أردتِ الاسترخاء بعد يوم طويل، ماذا تفضلين؟",
+                options: ["متابعة عمل مفضل بحب", "القراءة والاستماع لموسيقى هادئة", "الحديث مع من تحبين براحة", "الاسترخاء التام دون تفكير"],
+                responses: [
+                    "أوقات المتابعة الممتعة تمنح روحكِ تجديداً جميلاً 🎬",
+                    "الموسيقى والقراءة عالم سحري يليق برقتكِ 🎶",
+                    "الحديث معكِ هو أجمل جزء في أوقاتي 💬",
+                    "تستحقين الاسترخاء والراحة التامة دائمًا ☁️"
+                ]
+            },
+            {
+                q: "ما هي التفصيلة الصغرى التي تزرع الفرح في قلبكِ؟",
+                options: ["رؤية زهرة جميلة في الطريق", "نجمة ساطعة في السماء", "رسالة غافلة من شخص عزيز", "رائحة المطر الهادئة"],
+                responses: [
+                    "رقتكِ تشبه رقة الأزهار تماماً 🌸",
+                    "أنتِ النجمة الأسطع في سمائي دائماً 🌟",
+                    "الاهتمام المفاجئ يعكس مكانتكِ العظيمة 💌",
+                    "المطر والخير يذكراننا بصفاء قلبكِ 🌧️"
+                ]
+            },
+            {
+                q: "لو كانت المشاعر تُقاس بالألوان، فما لون سعادتكِ اليوم؟",
+                options: ["الوردي الهادئ", "الذهبي المشرق", "الأبيض العاجي النقائي", "العنابي الدافئ"],
+                responses: [
+                    "الوردي يعبر عن أنوثتكِ ورقة مشاعركِ 💕",
+                    "الذهبي يرمز إلى قيمتكِ العالية وبريقكِ ✨",
+                    "الأبيض هو لون صفاء ونقاء قلبكِ 🤍",
+                    "العنابي يجسد عمق ودفء حضوركِ المميز 🍷"
+                ]
+            },
+            {
+                q: "ما العبارة التي تحبين أن ترافقكِ دائماً؟",
+                options: ["«أنتِ أقوى وأجمل مما تظنين»", "«الغد يحمل أشياء أجمل»", "«ابتسامتكِ تضيء العالم»", "«أنتِ محبوبة ومقدرة جداً»"],
+                responses: [
+                    "قوتكِ ورقتكِ هما سر جمالكِ الاستثنائي 🌺",
+                    "الأيام القادمة مليئة بالخير والمسرات لكِ ☀️",
+                    "ابتسامتكِ تترك أثراً كالسحر في النفوس 😊",
+                    "مكانتكِ في القلب لا تقدر بثمن 💎"
+                ]
+            },
+            {
+                q: "ما هو الفصل المفضل لديكِ من فصول السنة؟",
+                options: ["الربيع بزهوره", "الشتاء بدفئه ومطره", "الخريف بهدوئه", "الصيف ببهجته ورحلاته"],
+                responses: [
+                    "الربيع يتفتح ويتزين حياءً من حسنكِ 🌸",
+                    "دفء الشتاء يذكرني بطفولة ودفء قلبكِ ❄️",
+                    "الخريف بهدوئه يشبه لحظات التأمل الرقيقة 🍂",
+                    "الصيف يكتسب بهجته من ضحكتكِ المشرقة ☀️"
+                ]
+            },
+            {
+                q: "كيف تحبين قضاء أوقات إجازتكِ؟",
+                options: ["في السفر واستكشاف أماكن جديدة", "في البيت مع الراحة والدفء", "في تجربة هواية جديدة ممتعة", "في لقاء الأحبة والأصدقاء"],
+                responses: [
+                    "الاستكشاف والسفر يضيفان لروحكِ شغفاً جميلاً ✈️",
+                    "دفء البيت يكتمل بوجودكِ الجميل 🏡",
+                    "طموحكِ وشغفكِ المستمر يبعثان على الإعجاب 🎨",
+                    "حضوركِ يضفي البهجة على كل جمعة وأحبة 👭"
+                ]
+            },
+            {
+                q: "ما المعنى الأجمل للنجاح بنظركِ؟",
+                options: ["الوصول إلى الأهداف بشغف", "مساعدة الآخرين وإسعادهم", "الراحة النفسية والسلام الداخلي", "التعلم المستمر وتطوير الذات"],
+                responses: [
+                    "إصراركِ وشغفكِ يوصلانكِ لأعلى القمم دائماً 🎓",
+                    "قلبكِ المعطاء ينشر الخير أينما حل 🕊️",
+                    "السلام الداخلي هو أرقى درجات النجاح لروحكِ 🌸",
+                    "عقلكِ النير وسعيكِ للتطور مدعاة للفخر 💡"
+                ]
+            },
+            {
+                q: "إذا اخترتِ أمنية للمستقبل القريب، فماذا تكون؟",
+                options: ["إنجاز دراسي أو مهني كبير", "راحة بال وصحة دائمة", "سفرة ممتعة لمكان تحبينه", "ذكريات جديدة لا تُنسى"],
+                responses: [
+                    "إن شاء الله تفرحين بأعلى درجات التوفيق والنجاح 🌟",
+                    "الصحة والسلامة والراحة هي أجمل النعم لكِ 🤲",
+                    "رحلة ممتعة تتمنينها وتحقق لكِ البهجة 🗺️",
+                    "كل يوم معكِ هو بداية لذكريات خالدة 📸"
+                ]
+            },
+            {
+                q: "ما الشعار الذي تودين اعتماده لهذا العام؟",
+                options: ["«الرفق بالنفس أولاً»", "«الإنجاز بحب وشفافية»", "«الاستمتاع بالتفاصيل الصغيرة»", "«التفاؤل وحسن الظن دائماً»"],
+                responses: [
+                    "كوني دائماً رحيمة بقلبكِ الرقيق 🤍",
+                    "إنجازاتكِ المباركة ستكون مدعاة لفخركِ 🌸",
+                    "التفاصيل الصغيرة هي سر السعادة الحقيقية ✨",
+                    "حسن الظن والتفاؤل يجلبان الفرح دائماً ☀️"
+                ]
+            },
+            {
+                q: "السؤال الحر: ما الأمنية الجميلة التي تتمنينها لنفسكِ في المستقبل؟",
+                isInput: true,
+                qText: "اكتبي أمنيتكِ الحرة هنا لتبقى محفورة في خاطركِ:"
+            }
+        ];
+
+        let currentQuizIndex = 0;
+
+        function initQuiz() {
+            renderQuizQuestion();
+        }
+
+        function renderQuizQuestion() {
+            const q = quizQuestions[currentQuizIndex];
+            document.getElementById('quiz-progress-text').innerText = `السؤال ${currentQuizIndex + 1} من ${quizQuestions.length}`;
+            document.getElementById('quiz-question-text').innerText = q.qText || q.q;
+            
+            const optionsContainer = document.getElementById('quiz-options');
+            const feedbackContainer = document.getElementById('quiz-feedback');
+            feedbackContainer.classList.add('hidden');
+            optionsContainer.innerHTML = '';
+
+            if(q.isInput) {
+                optionsContainer.innerHTML = `
+                    <div class="space-y-3">
+                        <textarea id="free-input-answer" rows="3" placeholder="اكتبي ما يجول بخاطركِ يا أميرتي..." class="w-full bg-burgundy-dark/80 border border-gold/40 rounded-xl p-3 text-ivory text-sm outline-none focus:border-gold"></textarea>
+                        <button onclick="submitFreeAnswer()" class="btn-gold w-full py-2.5 rounded-xl text-xs font-bold">تسجيل أمنيتي اللطيفة ✨</button>
+                    </div>
+                `;
+            } else {
+                q.options.forEach((opt, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'w-full text-right bg-burgundy-dark/60 hover:bg-gold/20 border border-gold/20 hover:border-gold rounded-xl p-3.5 text-xs md:text-sm text-ivory transition-all duration-300 flex items-center justify-between group';
+                    btn.innerHTML = `
+                        <span>${opt}</span>
+                        <i class="fas fa-heart text-xs text-rose-dusty group-hover:text-rose-accent transition"></i>
+                    `;
+                    btn.onclick = () => selectQuizOption(idx);
+                    optionsContainer.appendChild(btn);
+                });
+            }
+
+            document.getElementById('quiz-prev-btn').disabled = (currentQuizIndex === 0);
+        }
+
+        function selectQuizOption(index) {
+            const q = quizQuestions[currentQuizIndex];
+            const feedbackContainer = document.getElementById('quiz-feedback');
+            feedbackContainer.innerText = q.responses[index];
+            feedbackContainer.classList.remove('hidden');
+
+            // إطلاق تأثير القلوب المصغرة
+            spawnFloatingHeart();
+
+            setTimeout(() => {
+                if(currentQuizIndex < quizQuestions.length - 1) {
+                    currentQuizIndex++;
+                    renderQuizQuestion();
+                }
+            }, 1800);
+        }
+
+        function submitFreeAnswer() {
+            const val = document.getElementById('free-input-answer').value;
+            const feedbackContainer = document.getElementById('quiz-feedback');
+            feedbackContainer.innerText = val ? "أمنية جميلة كجمال قلبكِ، أسأل الله أن يحققها لكِ عاجلاً غير آجل 🤍" : "أمنياتكِ مستجابة ودعواتي لكِ لا تتوقف ✨";
+            feedbackContainer.classList.remove('hidden');
+
+            setTimeout(() => {
+                goToChapter(4);
+            }, 2000);
+        }
+
+        function skipQuestion() {
+            if(currentQuizIndex < quizQuestions.length - 1) {
+                currentQuizIndex++;
+                renderQuizQuestion();
+            } else {
+                goToChapter(4);
+            }
+        }
+
+        function prevQuestion() {
+            if(currentQuizIndex > 0) {
+                currentQuizIndex--;
+                renderQuizQuestion();
+            }
+        }
+
+        function resetQuiz() {
+            currentQuizIndex = 0;
+            renderQuizQuestion();
+        }
+
+        /* ==========================================================================
+           5. قسم الشعر العربي الفصيح (3 قصائد أصلية)
+           ========================================================================== */
+        const poemData = {
+            1: {
+                title: "غَزَلٌ فِي أَمِيرَتِي وَلاَء",
+                lines: [
+                    "أَطَلَّتْ كَنُورِ الصُّبْحِ حِينَ يَبْتَسِمُ ... فَتَزْهُو بِهَا الأَيَّامُ وَالْهَمُّ يَنْجَلِي",
+                    "ولَاءُ الَّتِي فِي حُسْنِهَا اكْتَمَلَ البَهَا ... كَأَنَّ السَّنَا مِنْ وَجْهِهَا يَتَهَلَّلُ",
+                    "إِذَا نَطَقَتْ زَادَتْ عُذُوبَةُ مَنْطِقٍ ... وَإِنْ بَسَمَتْ كَانَ الرَّبِيعُ يُأَقْبِلُ",
+                    "أَمِيرَةُ قَلْبِي بَيْنَ كُلِّ مَلِيحَةٍ ... لَهَا العَرْشُ فِي القَلْبِ الرَّحِيبِ المُبَجَّلِ"
+                ]
+            },
+            2: {
+                title: "عَهْدُ الشَّوْقِ وَالوَفَاء",
+                lines: [
+                    "سَأَحْفَظُ عَهْدَ المَحَبَّةِ صَادِقاً ... وَأَرْعَى الوَفَاءَ إِذَا الزَّمَانُ تَغَيَّرَا",
+                    "وَيَبْقَى الشَّوْقُ فِي الأَضْلُاعِ نَاراً ... إِذَا نَامَتْ عُيُونُ النَّاسِ أَبْهَرَا",
+                    "وَلَاءُ يَا أَمَلَ الحَيَاةِ وَعِطْرَهَا ... لَكِ القَلْبُ بِالإِخْلاَصِ قَدْ عُمِرَا",
+                    "صَفَاءُ الوِدَادِ لَدَيْكِ لَيْسَ بِمُحْتَضَرٍ ... وَإِنَّ الوفَاءَ بِكُم يُصَانُ وَيُذْكَرَا"
+                ]
+            },
+            3: {
+                title: "أَمَلُ المُسْتَقْبَلِ وَالطَّمَأْنِينَة",
+                lines: [
+                    "نَرْنُو إِلَى الغَدِ فِي رَجَاءِ طَمَأْنِينَةٍ ... يُظِلُّ الحَلاَلُ طَرِيقَنَا وَيُبَارِكُ",
+                    "بِالصَّبْرِ وَالإِحْسَانِ نَبْنِي أُمْنِيَةً ... وَاللهُ يَرْعَى الخَطْوَ وَهُوَ المُشَارِكُ",
+                    "لَكِ المَجْدُ يَا أُخْتَ السُّهَى فِي طُمُوحِهَا ... وَلَكِ الدُّعَاءُ بِأَنْ تَزُولَ المَهَالِكُ",
+                    "عَسَى اللَّهُ يَجْمَعُ شَمْلَنَا فِي سَعَادَةٍ ... وَتَغْدُو لَنَا الأَيَّامُ رَوْضاً يُضَاحِكُ"
+                ]
+            }
+        };
+
+        let currentPoemId = 1;
+
+        function showPoem(id) {
+            currentPoemId = id;
+            [1, 2, 3].forEach(i => {
+                const tab = document.getElementById(`poem-tab-${i}`);
+                if(i === id) {
+                    tab.className = "px-4 py-2 rounded-xl text-xs font-bold border border-gold/40 bg-gold text-burgundy-dark transition";
+                } else {
+                    tab.className = "px-4 py-2 rounded-xl text-xs font-bold border border-gold/20 bg-burgundy/60 text-rose-dusty hover:text-gold transition";
+                }
+            });
+
+            const data = poemData[id];
+            document.getElementById('poem-title').innerText = data.title;
+            const body = document.getElementById('poem-body');
+            body.innerHTML = '';
+
+            data.lines.forEach((line, index) => {
+                const p = document.createElement('p');
+                p.className = "opacity-0 transform translate-y-2 transition-all duration-700";
+                p.innerText = line;
+                body.appendChild(p);
+
+                setTimeout(() => {
+                    p.classList.remove('opacity-0', 'translate-y-2');
+                }, index * 400);
+            });
+        }
+
+        function copyCurrentPoem() {
+            const data = poemData[currentPoemId];
+            const textToCopy = `${data.title}\n\n${data.lines.join('\n')}\n\nإلى أميرتي ولاء 🤍`;
+            
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            alert("تم نسخ القصيدة بنجاح يا أميرتي ✨");
+        }
+
+        /* ==========================================================================
+           6. قسم الأظرف السرية (6 أظرف)
+           ========================================================================== */
+        const envelopeMessages = {
+            1: {
+                title: "افتحيني عندما تحتاجين إلى الابتسام",
+                icon: "fa-smile",
+                text: "تذكري دائماً أن ابتسامتكِ تضفي جمﺎلاً استثنائياً على هذا العالم. حتى في أوقات الانشغال والتعَب، تذكري أن هناك من يتمنى ابتسامتكِ دائماً لأنها تعيد للقلب إشراقه ونوره."
+            },
+            2: {
+                title: "افتحيني عندما يكون يومكِ صعبًا",
+                icon: "fa-cloud-rain",
+                text: "لا بأس بأن يشعر الإنسان بالتعب أحياناً، فستمر الأيام الثقيلة كما مرت غيرها. خذي أنفاساً عميقة، ورفقاً بقلبكِ الرقيق، وتذكري أن بعد كل ضيق فرجاً ولطفاً محفوفاً بالخير."
+            },
+            3: {
+                title: "افتحيني عندما تشتاقين إلى الكلمات الجميلة",
+                icon: "fa-heart",
+                text: "أنتِ لستِ مجرد شخص عابر، بل أنتِ أثرٌ جميل وفصلٌ رفيع من النقاء. الكلمات الطيبة صيغت لأمثالكِ ممن يزرعون السلام في النفوس بوجودهم ورقة تعاملهم."
+            },
+            4: {
+                title: "افتحيني عندما تنسين كم أنتِ مميزة",
+                icon: "fa-star",
+                text: "قد ينشغل الإنسان في تفاصيل الحياة فينسى قدره العظيم؛ أنتِ إنسانة ذكية، طموحة، وتحملين قلباً كبيراً لا يتردد في منح الخير. كوني دائماً فخورة بنفسكِ وبكل ما تنجزينه."
+            },
+            5: {
+                title: "افتحيني عندما تريدين قراءة أمنية من قلبي",
+                icon: "fa-wand-magic-sparkles",
+                text: "أمنى لكِ مستقبلاً زاهراً مليئاً بالطمأنينة والإنجازات الحقيقية. أسأل الله أن ييسر لكِ كل عسير، وأن يحيطكِ بالصحبة الصالحة والنور في كل خَطوة تخطينها."
+            },
+            6: {
+                title: "سرّ صغير لم أضعه في أي ظرف آخر",
+                icon: "fa-gem",
+                text: "قيمة الإنسان الحقيقية لا تقاس بمدى كماله ظاهرياً، بل بنقاء سريرته وصدق قلبه. أنتِ يا ولاء تستحقين اللطف الشديد، والاحترام المتبادل، والفرح الصافي الذي لا يكدر صفوه شيء."
+            }
+        };
+
+        function openEnvelope(id) {
+            const data = envelopeMessages[id];
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-icon').innerHTML = `<i class="fas ${data.icon}"></i>`;
+            document.getElementById('modal-content').innerText = data.text;
+            document.getElementById('envelope-modal').classList.remove('hidden');
+        }
+
+        function closeEnvelopeModal() {
+            document.getElementById('envelope-modal').classList.add('hidden');
+        }
+
+        /* ==========================================================================
+           7. قسم صناديق الهدايا الثلاثة
+           ========================================================================== */
+        const giftData = {
+            1: {
+                title: "هدية الكلمات",
+                icon: "fa-comment-dots",
+                text: "الكلام الطيب أمان وحضن للروح؛ قد تعجز السطور، لكن أصدق ما أهديكِ إياه هو الدعاء بالسلام والبهجة في كل أيامكِ المقبلة."
+            },
+            2: {
+                title: "هدية الشعر المخصص",
+                icon: "fa-feather-alt",
+                text: "تَصَفَّحْتُ كُلَّ الشِّعْرِ كَي أَجِدَ الَّذِي ... يُلِيقُ بِحُسْنٍ أَنْتِ فِيهِ المَلاَكُ\nفَوَجَدْتُ أَنَّ الحُسْنَ فِيكِ حَقِيقَةٌ ... وَأَنَّ جَمَالَ القَوْلِ حِينَ أَرَاكِ"
+            },
+            3: {
+                title: "هدية الأمنيات",
+                icon: "fa-sun",
+                text: "أمنيتي لكِ في دراستكِ وحياتكِ أن ينير الله طريقكِ بالنجاحات، وأن تظلي دائماً مصدر فخر وإلهام لنفسكِ ولكل من يحبكِ."
+            }
+        };
+
+        function openGiftBox(id) {
+            const data = giftData[id];
+            document.getElementById('gift-modal-title').innerText = data.title;
+            document.getElementById('gift-modal-icon').innerHTML = `<i class="fas ${data.icon}"></i>`;
+            document.getElementById('gift-modal-text').innerText = data.text;
+            document.getElementById('gift-modal').classList.remove('hidden');
+            spawnFloatingHeart();
+        }
+
+        function closeGiftModal() {
+            document.getElementById('gift-modal').classList.add('hidden');
+        }
+
+        /* ==========================================================================
+           8. قسم 100 سبب للمحبة (مقسمة على 10 صفحات)
+           ========================================================================== */
+        const allReasons = [
+            "لأن ابتسامتكِ تعيد التوازن لأصعب الأيام.",
+            "لأنكِ تحملين قلباً نقياً لا يضمر سوى الخير.",
+            "لأن كلامكِ الطيب يبعث الطمأنينة في النفس.",
+            "لأن طموحكِ وسعيكِ للتعلم مدعاة للاعتزاز.",
+            "لأن حسكِ الرفيع يضفي جمالاً على كل مكان.",
+            "لأنكِ تصغين باهتمام ورفق حقيقيين.",
+            "لأنكِ صادقة مع نفسكِ ومع الآخرين.",
+            "لأن وجودكِ يذكرني بأن بالدنيا أشياء جميلة تستحق الاحتفاء.",
+            "لأن اهتمامكِ بالتفاصيل الصغرى ينم عن رقة روحكِ.",
+            "لأنكِ تجيدين نشر الفرح والبهجة بلطف.",
+            "لأن هدوءكِ عند الأزمات يعكس عقلكِ النير.",
+            "لأنكِ قوية أمام الصعاب ورقيقة في المشاعر.",
+            "لأنكِ تحترمين القيم والمبادئ العالية.",
+            "لأن صوتكِ يحمل دفئاً ينسي التعب.",
+            "لأنكِ تملكين ذوقاً رفيعاً في كل اختيار.",
+            "لأن ابتسامتكِ العفوية لا مثيل لها.",
+            "لأنكِ تمنحين الأمل لمن حولكِ بسلاسة.",
+            "لأنكِ تعاملين الجميع بأخلاق راقية.",
+            "لأن نظرتكِ للحياة مليئة بالتفاؤل والنور.",
+            "لأنكِ تسعين دائماً لتطوير ذاتكِ بخطوات واثقة.",
+            "لأن لكِ أثراً طيباً يسبقكِ أينما حللتِ.",
+            "لأن رقتكِ تشبه رقة الأزهار النادرة.",
+            "لأنكِ تفهمين المقاصد الطيبة دون تكلف.",
+            "لأن حضوركِ يضيف هيبة ودفئاً في آن واحد.",
+            "لأنكِ تؤمنين بأن الحب احترام قبل أن يكون كلاماً.",
+            "لأن لكِ ضحكة تجلب المسرة للقلوب.",
+            "لأنكِ تحفظين الود والعهد في كل حين.",
+            "لأنكِ متواضعة على الرغم من كل تميزكِ.",
+            "لأنكِ تصنعين من أسهل الأمور ذكريات جميلة.",
+            "لأنكِ تستحقين كل المودة والخير في هذا العالم.",
+            "لأنكِ حريصة على مشاعر من حولكِ بدقة.",
+            "لأن طريقة تفكيركِ تعكس نضجاً وعمقاً فريدين.",
+            "لأنكِ تبثين الطاقة الإيجابية بكلمات بسيطة.",
+            "لأنكِ شجاعة في مواجهة التحديات الدراسية والعملية.",
+            "لأن لكِ أسلوباً خاصاً وأنيقاً في الحديث.",
+            "لأنكِ ترسمين البسمة بأبسط المبادرات.",
+            "لأنكِ تقدرين جهود الآخرين ولا تنسين الفضل.",
+            "لأنكِ تلتمسين الأعذار برحمة ونقاء.",
+            "لأن كرم أخلاقكِ يظهر في أوقات الشدة.",
+            "لأنكِ تسعدين بنجاحات غيركِ من كل قلبكِ.",
+            "لأن عينيكِ تحملان لمعة الشغف والذكاء.",
+            "لأنكِ متوازنة في آراءكِ وفي تقييم الأمور.",
+            "لأنكِ تحبين الخير للجميع دون مقابل.",
+            "لأنكِ تجعلين كل لحظة حديث معكِ ثرية وممتعة.",
+            "لأنكِ إنسانة واعية بمسؤولياتها وقيمتها.",
+            "لأن رقة قلبكِ تظهر حتى في أصغر اللفتات.",
+            "لأنكِ تجيدين اختيار الكلمة المناسبة في وقتها.",
+            "لأن حياءكِ ووقاركِ يزدان بهما حسنكِ.",
+            "لأنكِ تمنحين القوة والتشجيع لمن يحتاجه.",
+            "لأنكِ مصدر ثقة وأمان دائم.",
+            "لأن اهتماماتكِ المتنوعة تثري شخصيتكِ.",
+            "لأنكِ تحافظين على صلاتكِ وقربكِ من الله.",
+            "لأنكِ تضفين طابعاً أسطورياً على أبسط الحكايات.",
+            "لأن وجودكِ يجعل الأيام الرمادية زاهية.",
+            "لأنكِ ثابتة على الحق ولا تتغيرين بتغير الظروف.",
+            "لأنكِ تمتازين بلمسة إبداعية في تفكيركِ.",
+            "لأن رغبتكِ في مساعدة الآخرين نابعة من صفاء أصلكِ.",
+            "لأنكِ تتقنين الفرح ولا تبخلين بالإيجابية.",
+            "لأن أمنياتكِ صريحة وطاهرة كروحكِ.",
+            "لأنكِ تجعلين المكان أفضل بمجرد وجودكِ فيه.",
+            "لأنكِ متجددة الشغف ولا تملين من النجاح.",
+            "لأنكِ تسامحين بقلب كبير ولا تحملين الضغينة.",
+            "لأنكِ تتحدثين بصدق وتبتعدين عن التصنع.",
+            "لأنكِ تمتلكين أسلوباً لطيفاً في التعبير عن الرأي.",
+            "لأن اهتمامكِ بالتفاصيل يثبت صدق مشاعركِ.",
+            "لأنكِ تصبرين وتثابرين للوصول لمرادكِ.",
+            "لأن لكِ طلة تسر العين وتثلج الصدر.",
+            "لأنكِ صديقة ورفيقة درب حقيقية.",
+            "لأنكِ تعيدين للشعر والأدب قيمته الفنية.",
+            "لأن أهدافكِ نبيلة وقيمكِ ثابتة.",
+            "لأنكِ تفهمين المشاعر الصامتة دون أن تُقال.",
+            "لأن حسكِ الفكاهي يطفئ مرارة التعب.",
+            "لأنكِ حريصة على نشر السلام والاستقرار.",
+            "لأنكِ تمتلكين ذاكرة لطيفة للذكريات الجميلة.",
+            "لأنكِ تملئين العقل بالاستبشار والراحة.",
+            "لأنكِ نادرة بصفاتكِ العظيمة في هذا الزمان.",
+            "لأن هدوءكِ يبعث الأمان والطمأنينة.",
+            "لأنكِ تحبين العلم والتعلم وتستغلين وقتكِ.",
+            "لأن إخلاصكِ نقي لا تشوبه شائبة.",
+            "لأنكِ تجعلينني أرغب في تقديم أفضل ما لدي.",
+            "لأن لطفكِ ليس مجرد مجاملة، بل طبع أصيل.",
+            "لأنكِ تتجاوزين العثرات بحكمة وعزيمة.",
+            "لأنكِ تمنحين الدافع للنمو والتقدم.",
+            "لأن لكِ نظرة حكيمة في الأمور الحياتية.",
+            "لأنكِ تحترمين خصوصية ومشاعر الجميع.",
+            "لأن كلامكِ يأتي دائماً كبلسم للجراح.",
+            "لأنكِ تحافظين على طهارة مشاعركِ ونقاء خاطركِ.",
+            "لأن السعادة في قربكِ أصفى وأعمق.",
+            "لأنكِ فخورة ب هويتكِ وقيمكِ الشريفة.",
+            "لأنكِ تمنحين الحياة طعماً مختلفاً وأجمل.",
+            "لأن كرم روحكِ يفيض على كل من حولكِ.",
+            "لأن صمودكِ أمام المشاق يدعو للإعجاب.",
+            "لأن ابتسامتكِ تذكر بالفرح الحقيقي الذي لا يزول.",
+            "لأنكِ أميرة في حضوركِ، ملكة في قلبي.",
+            "لأن اسمكِ «ولاء» يختصر معاني الوفاء والصدق.",
+            "لأنكِ حكاية جميلة أعتز بروايتها دائماً.",
+            "لأن المكانة التي لكِ لا يستطيع أحد أن يشغلها.",
+            "لأنكِ ولاء... وكفى بهذا سبباً لكل محبة واحترام! 🤍"
+        ];
+
+        let currentReasonsPage = 1;
+        const reasonsPerPage = 10;
+
+        function renderReasonsPage(page) {
+            currentReasonsPage = page;
+            const start = (page - 1) * reasonsPerPage;
+            const end = start + reasonsPerPage;
+            const pageItems = allReasons.slice(start, end);
+
+            const container = document.getElementById('reasons-container');
+            container.innerHTML = '';
+
+            pageItems.forEach((reason, idx) => {
+                const itemNum = start + idx + 1;
+                const card = document.createElement('div');
+                card.className = "bg-burgundy-dark/80 border border-gold/20 rounded-xl p-4 text-xs md:text-sm text-ivory/90 flex items-start space-x-3 space-x-reverse space-y-0 transform hover:-translate-y-1 transition duration-300";
+                card.innerHTML = `
+                    <span class="inline-block w-7 h-7 rounded-full bg-gold/20 border border-gold/40 text-gold text-center font-bold text-xs leading-7 flex-shrink-0">${itemNum}</span>
+                    <p class="pt-1 font-serif-ar leading-relaxed">${reason}</p>
+                `;
+                container.appendChild(card);
+            });
+
+            document.getElementById('reasons-page-indicator').innerText = `الصفحة ${page} من 10`;
+            document.getElementById('reasons-prev-btn').disabled = (page === 1);
+            document.getElementById('reasons-next-btn').disabled = (page === 10);
+        }
+
+        function nextReasonsPage() {
+            if(currentReasonsPage < 10) {
+                renderReasonsPage(currentReasonsPage + 1);
+            }
+        }
+
+        function prevReasonsPage() {
+            if(currentReasonsPage > 1) {
+                renderReasonsPage(currentReasonsPage - 1);
+            }
+        }
+
+        /* ==========================================================================
+           9. قسم مرآة الكلمات الجميلة (20+ عبارة متجددة)
+           ========================================================================== */
+        const mirrorPhrases = [
+            "أنتِ تستحقين أن تُعاملي بلطف واهتمام دائماً.",
+            "ليس عليكِ أن تكوني مثالية كي تكوني مميزة؛ فجمالكِ في حقيقتكِ.",
+            "من حقكِ أن ترتاحي حين تتعبين، فالراحة حقٌ لقلبكِ الرقيق.",
+            "فيكِ صفات جميلة قد لا تنتبهين إليها، ولكنها تضيء حياة من حولكِ.",
+            "أمنياتكِ تستحق أن تمنحيها وقتاً وأملاً، وستتحقق بإذن الله.",
+            "كوني رحيمة بنفسكِ كما تتمنين أن يكون الآخرون معكِ.",
+            "ابتسامتكِ تترك أثراً طاهراً لا يمحوه الزمن.",
+            "عقلكِ النير وطموحكِ المتقد هما سر تميزكِ الاستثنائي.",
+            "أنتِ شخص يحمل القبول والسلام أينما حل.",
+            "لا تقارني نفسكِ بأحد، فأنتِ كتاب نادر لا شبيبه له.",
+            "في قلبكِ طهارة تجعلكِ موضع ثقة ومحبة الجميع.",
+            "صبركِ واجتهادكِ سيتوجان بالفرح والنجاح القريب.",
+            "كوني فخورة بقوتكِ، وبكل مرحلة تجاوزتها بكرامة.",
+            "وجودكِ في الحياة أمل يتجدد ومساحة من السكينة.",
+            "أنتِ ملكة على عرش ذاتكِ بأخلاقكِ الرفيعة.",
+            "كل يوم هو فرصة جديدة لتزهر أفكاركِ وتشرق أحلامكِ.",
+            "كلماتكِ اللطيفة تبني جسوراً من المحبة الصادقة.",
+            "حفظ الله روحكِ الرقيقة وجعل أيامكِ حافلة بالمسرات.",
+            "أنتِ مميزة، ليس بما تملكين، بل بما تحويه روحكِ من خير.",
+            "ثقي تماماً بأن الغد يحمل لكِ من الأقدار أجملها!"
+        ];
+
+        function generateMirrorPhrase() {
+            const randomPhrase = mirrorPhrases[Math.floor(Math.random() * mirrorPhrases.length)];
+            const textElem = document.getElementById('mirror-text');
+            
+            textElem.style.opacity = '0';
+            setTimeout(() => {
+                textElem.innerText = `« ${randomPhrase} »`;
+                textElem.style.opacity = '1';
+            }, 300);
+
+            spawnFloatingHeart();
+        }
+
+        /* ==========================================================================
+           10. أمنيات المستقبل وتحويلها إلى نجمة
+           ========================================================================== */
+        function launchWishStar() {
+            const input = document.getElementById('user-wish-input');
+            const wishText = input.value.trim();
+
+            if(!wishText) {
+                alert("يرجى كتابة أمنيتكِ أولاً يا أميرتي ✨");
+                return;
+            }
+
+            const display = document.getElementById('wish-star-display');
+            display.innerText = `🌟 انطلقت أمنيتكِ: "${wishText}" لتضيء سماء الموقع الآن!`;
+            display.classList.remove('hidden');
+            input.value = '';
+
+            spawnFloatingHeart();
+        }
+
+        /* ==========================================================================
+           11. المفاجأة النهائية السينمائية
+           ========================================================================== */
+        function triggerFinalSurprise() {
+            document.getElementById('final-modal').classList.remove('hidden');
+            spawnFloatingHeart();
+        }
+
+        /* ==========================================================================
+           12. تأثير القلوب العائمة ونظام الجسيمات (Canvas)
+           ========================================================================== */
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.opacity = Math.random() * 0.7 + 0.3;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if(this.x > canvas.width) this.x = 0;
+                if(this.x < 0) this.x = canvas.width;
+                if(this.y > canvas.height) this.y = 0;
+                if(this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for(let i = 0; i < 60; i++) {
+                particles.push(new Particle());
+            }
+            animateParticles();
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        function spawnFloatingHeart() {
+            for(let i = 0; i < 5; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'fixed pointer-events-none text-rose-accent text-xl animate-bounce z-50';
+                heart.style.left = `${Math.random() * 80 + 10}%`;
+                heart.style.top = `${Math.random() * 80 + 10}%`;
+                heart.innerHTML = '💖';
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 1500);
+            }
+        }
+    </script>
+</body>
+</html>
